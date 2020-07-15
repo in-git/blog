@@ -1,0 +1,33 @@
+.border-left-5 {
+	border-left: 5px solid #47d6d6 !important;
+}
+
+.my-bgcolor {
+	/* 
+		background-color: #47d6d6;
+		background-color: #F8FFFF; 
+	*/
+	background-color: #CBF9FF;
+}
+
+.my-button-link {
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border: solid 0.5px rgba(170, 255, 255, 0.8) !important;
+}
+
+.my-button-link:focus {
+	outline: none;
+}
+
+.my-color {
+	color: #47d6d6;
+}
+
+.no-outline:focus {
+	outline: none !important;
+}
+
+a {
+	text-decoration: none !important;
+}
