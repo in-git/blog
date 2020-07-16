@@ -1,0 +1,57 @@
+.rounded-bottom {
+	border-bottom-right-radius: 60px !important;
+	border-bottom-left-radius: 60px !important;
+}
+
+.my-pointer {
+	cursor: pointer;
+}
+
+.rounded-up {
+	border-top-left-radius: 60px !important;
+	border-top-right-radius: 60px !important;
+}
+
+.rounded-30 {
+	border-radius: 30px !important;
+}
+
+.my-bgcolor {
+/* 
+	background-color: #47d6d6;
+	background-color: #F8FFFF; 
+*/
+	background-color: #cbf9ff;
+}
+
+.my-bgcolor-light {
+	background-color: #e6ffff;
+}
+
+.my-link-color {
+	color: #008169;
+}
+
+.my-color {
+	color: #47d6d6;
+}
+
+.my-index-side-nav:hover {
+	cursor: pointer;
+	background-color: rgba(170, 255, 255, 0.8);
+	color: #aa55ff;
+	transition: 0.5s;
+}
+
+.my-bottom-0 {
+	bottom: 0px;
+}
+
+.my-center {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.my-acitve {
+	color: #7446ab;
+}
