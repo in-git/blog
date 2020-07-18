@@ -47,10 +47,9 @@
 				<div class="col col-12 col-xl-3 col-lg-3 d-none d-xl-block d-lg-block">
 					<ul class="list-group text-center mr-4  rounded h-100">
 						<li class="list-group-item  border-0  p-0 my-color "><span class="mdi mdi-feather mdi-36px"></span></li>
-						<li :class="[{'my-acitve':e === sidebarActive ?  true:false},`${sidebarClass}`] "
-						 @click="push(i.href,e)" v-for="(i,e) in sidebar"
+						<li :class="[{'my-acitve':e === sidebarActive ?  true:false},`${sidebarClass}`] " @click="push(i.href,e)" v-for="(i,e) in sidebar"
 						 :key="i.id">
-							<span class="mdi mdi-gamepad-down"></span>
+							<span :class="i.icon"></span>
 							<span v-text="i.title"></span>
 						</li>
 					</ul>
@@ -67,9 +66,9 @@
 					底部jumbotron
 				*-*-*-*-*-* 
 			 -->
-
+			
 			<div>
-				<div  class="jumbotron jumbotron-fluid m-0 fixed-bottom bg-dark text-white rounded-up py-0 d-none d-xl-block" >
+				<div class="jumbotron jumbotron-fluid m-0 fixed-bottom bg-dark text-white rounded-up py-0 d-none d-xl-block">
 					<div class="container">
 						<b-row>
 							<b-col>
@@ -82,11 +81,11 @@
 						</b-row>
 
 						<el-collapse-transition>
-							<div v-show="jumbotronShow">
+							<div v-show="jumbotronShow" class="mb-2">
 								<b-row>
 									<b-col v-for="n in 4" :key='n'>
-										<div class="card">
-											<div class="card-body py-0 ">
+										<div class="card ">
+											<div class="card-body pt-0 ">
 												<blockquote class="blockquote m-0">
 													<footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
 												</blockquote>

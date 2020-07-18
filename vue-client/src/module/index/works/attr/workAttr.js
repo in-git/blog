@@ -1,6 +1,8 @@
 let attr = {
 	data() {
 		return {
+			collapseActive:'2',
+			
 			activeNames: ['1'],
 			activeName: 'first',
 			active: 0,
@@ -34,16 +36,17 @@ let attr = {
 					time: '2020/06',
 					tag: ['springboot', 'vue', 'mysql']
 				},
+				
 			]
 		};
 	},
 
 	methods: {
 		handleChange(val) {
-			console.log(val);
+			// console.log(val);
 		},
 		handleClick(tab, event) {
-			console.log(tab, event);
+			// console.log(tab, event);
 		},
 		next() {
 			if (this.active++ > 2) this.active = 0;

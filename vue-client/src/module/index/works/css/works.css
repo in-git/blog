@@ -1,0 +1,29 @@
+.el-timeline-item {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.my-bgcolor {
+	background-color: #cbf9ff;
+}
+
+
+
+.left-border-color-1 {
+	border: none;
+	border-left: 10px solid #00aaff;
+	background-color: #eefbff;
+
+}
+
+.left-border-color-2 {
+	border: none;
+	border-left: 10px solid #aaaaff;
+	background-color: #efebff;
+}
+
+.left-border-color-3 {
+	border: none;
+	border-left: 10px solid #ffb3d0;
+	background-color: #ffe6ec;
+}

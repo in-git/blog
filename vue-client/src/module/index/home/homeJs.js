@@ -18,23 +18,27 @@ let attr = {
 			sidebar: [{
 					id: 1,
 					title: '主页',
-					href: '/home/main'
+					href: '/home/main',
+					icon:'mdi mdi-material-ui'
 				},
 				{
 					id: 2,
 					title: '作品',
-					href: '/home/works'
+					href: '/home/works',
+					icon:'mdi mdi-svg'
 				},
 
 				{
 					id: 3,
 					title: '关于我',
-					href: '/home/resume'
+					href: '/home/resume',
+					icon:'mdi mdi-fountain-pen'
 				},
 				{
 					id: 4,
 					title: '关于本页',
-					href: '/home/website'
+					href: '/home/website',
+					icon:'mdi mdi-openid'
 				},
 			],
 			jumbotronShow: false,

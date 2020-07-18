@@ -2,50 +2,76 @@
 	<div>
 
 		<div class="container  ">
+
+			<!--
+				
+				   -*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
+				                 引导式风格
+				   -*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
+				  
+			 -->
 			<div class="row ">
 				<div class="col col-xl-6 col-lg-6 col-12 ">
-					<div>
-						<b-card overlay img-src="https://picsum.photos/900/250/?image=3" text-variant="white" title="在线作品">
-							<b-card-text>
-								所有作品均为纯手工打造，阶段性记录
-							</b-card-text>
-						</b-card>
-					</div>
-					<el-divider><i class="el-icon-mobile-phone"></i></el-divider>
+					<el-divider><span class="font-weight-bold">理论作品</span></el-divider>
+					<v-card-title class="pt-0">
+						<strong>引导式风格</strong>
+						<el-popover placement="top-start" title="说明" width="200" trigger="hover" content="引导式风格的最终效果是完全动态网页">
+							<el-button type="text" slot="reference"><i class="el-icon-info pt-1"></i></el-button>
+						</el-popover>
 
-					<el-button @click="next">下一步</el-button>
-					<el-steps :active="active" finish-status="success">
-						<el-step title="步骤 1"></el-step>
-						<el-step title="步骤 2"></el-step>
-						<el-step title="步骤 3"></el-step>
-					</el-steps>
+					</v-card-title>
+					<el-tabs tab-position="left">
+						<el-tab-pane label="概览">
+							<b-alert show class="left-border-color-1">一个超级MVC结构</b-alert>
+							<b-alert show class="left-border-color-1">只要符合该规范，理论可以容纳任意个项目（待验证）</b-alert>
+						</el-tab-pane>
+						<el-tab-pane label="特点">
+							<b-alert variant="light" show class="left-border-color-2">适用于B-S,C-S结构</b-alert>
+							<b-alert variant="light" show class="left-border-color-2">快速定位Bug</b-alert>
+							<b-alert variant="light" show class="left-border-color-2">弹性增删业务逻辑，任何业务逻辑的删改，不影响其他板块内容</b-alert>
+						</el-tab-pane>
+					</el-tabs>
 
 
 
-					<el-card class="border-0 shadow-none">
-						<el-collapse v-model="activeNames" @change="handleChange">
-							<el-collapse-item title="一致性 Consistency" name="1">
-								<div>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</div>
-								<div>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</div>
-							</el-collapse-item>
-							<el-collapse-item title="反馈 Feedback" name="2">
-								<div>控制反馈：通过界面样式和交互动效让用户可以清晰的感知自己的操作；</div>
-								<div>页面反馈：操作后，通过页面元素的变化清晰地展现当前状态。</div>
-							</el-collapse-item>
-							<el-collapse-item title="效率 Efficiency" name="3">
-								<div>简化流程：设计简洁直观的操作流程；</div>
-								<div>清晰明确：语言表达清晰且表意明确，让用户快速理解进而作出决策；</div>
-								<div>帮助用户识别：界面简单直白，让用户快速识别而非回忆，减少用户记忆负担。</div>
-							</el-collapse-item>
-							<el-collapse-item title="可控 Controllability" name="4">
-								<div>用户决策：根据场景可给予用户操作建议或安全提示，但不能代替用户进行决策；</div>
-								<div>结果可控：用户可以自由的进行操作，包括撤销、回退和终止当前操作等。</div>
-							</el-collapse-item>
-						</el-collapse>
-					</el-card>
+					<!--
+								
+						   -*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
+										 笔记规范
+						   -*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
+								  
+					-->
+
+					<v-card-title class="pt-0">
+						<strong>笔记规范</strong>
+						<el-popover placement="top-start" title="说明" width="200" trigger="hover" content="笔记规范说明">
+							<el-button type="text" slot="reference"><i class="el-icon-info pt-1"></i></el-button>
+						</el-popover>
+
+					</v-card-title>
+					<el-tabs tab-position="left">
+						<el-tab-pane label="概览">
+							<b-alert show class="left-border-color-1"> 这是一篇向传统学习方式发起挑战的体系，目前正在完善中</b-alert>
+						</el-tab-pane>
+						<el-tab-pane label="理念">
+							<b-alert show class="left-border-color-1">
+								
+							</b-alert>
+						</el-tab-pane>
+						<el-tab-pane label="规范">
+							<b-alert show class="left-border-color-2"><small>内容分条梳理，言简意赅</small></b-alert>
+							<b-alert show class="left-border-color-2"><small>结构统一，便于搜索</small></b-alert>
+							<b-alert variant="light" show class="left-border-color-2"><small>确保内容准确，有必要则牺牲严谨性，使文字易懂</small></b-alert>
+							<b-alert variant="light" show class="left-border-color-2"><small>不使与关键内容无关的词汇，如形容词、副词等</small></b-alert>
+							<b-alert variant="light" show class="left-border-color-2"><small>不使外语注释</small></b-alert>
+						</el-tab-pane>
+					</el-tabs>
 				</div>
 
+
+
 				<div class="col">
+					<el-divider><span class="font-weight-bold">线上作品</span></el-divider>
 					<template>
 						<el-tabs v-model="activeName" @tab-click="handleClick">
 
@@ -152,13 +178,6 @@
 	export default attr
 </script>
 
-<style scoped lang="less">
-		.el-timeline-item {
-			padding-top: 0 !important;
-			padding-bottom: 0 !important;
-		}
-
-	.my-bgcolor {
-		background-color: #cbf9ff;
-	}
+<style scoped>
+	@import url("./css/works.css");
 </style>

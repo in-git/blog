@@ -24,7 +24,7 @@
 					<el-divider content-position="left">常用工具</el-divider>
 					<div class="row">
 						<div class="col d-flex">
-							<el-input size="mini" placeholder="请输入内容" clearable v-model="input1">
+							<el-input size="mini" placeholder="请输入内容" clearable>
 								<template slot="prepend">md5加密</template>
 							</el-input>
 							<el-button size="mini">提交</el-button>
