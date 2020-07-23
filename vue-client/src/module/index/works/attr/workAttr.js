@@ -1,6 +1,7 @@
 let attr = {
 	data() {
 		return {
+			gameTips:'一开始构思做一个简单的网络对战小游戏，后来发现素材不够放弃了。思路:使用websocket通讯，每个用户上线,新建对象，每个对象具备移动攻击的能力',
 			collapseActive:'2',
 			
 			activeNames: ['1'],

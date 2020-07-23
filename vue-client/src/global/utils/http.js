@@ -52,7 +52,6 @@ axios.interceptors.request.use(
 //响应拦截器
 axios.interceptors.response.use(
 	response => {
-		console.log(response);
 		if (response.data.errCode == 2) {
 			router.push({
 				path: "/login",

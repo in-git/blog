@@ -12,60 +12,29 @@
 			 -->
 			<div class="row ">
 				<div class="col col-xl-6 col-lg-6 col-12 ">
-					<el-divider><span class="font-weight-bold">理论作品</span></el-divider>
-					<v-card-title class="pt-0">
+					<el-divider><span class="font-weight-bold">探索作品</span></el-divider>
+					<b-card-title class="pt-0">
 						<strong>引导式风格</strong>
 						<el-popover placement="top-start" title="说明" width="200" trigger="hover" content="引导式风格的最终效果是完全动态网页">
 							<el-button type="text" slot="reference"><i class="el-icon-info pt-1"></i></el-button>
 						</el-popover>
 
-					</v-card-title>
+					</b-card-title>
 					<el-tabs tab-position="left">
 						<el-tab-pane label="概览">
-							<b-alert show class="left-border-color-1">一个超级MVC结构</b-alert>
-							<b-alert show class="left-border-color-1">只要符合该规范，理论可以容纳任意个项目（待验证）</b-alert>
+							<b-alert show class="left-border-color-1">只要符合该风格，理论可以容纳任意个项目</b-alert>
+							<b-alert show class="left-border-color-1">使用文件目录+界面划分业务逻辑</b-alert>
+							<b-alert show class="left-border-color-1">使前端，后台，界面统一</b-alert>
 						</el-tab-pane>
 						<el-tab-pane label="特点">
-							<b-alert variant="light" show class="left-border-color-2">适用于B-S,C-S结构</b-alert>
+							<b-alert variant="light" show class="left-border-color-2">适用于单页面或多页面结构</b-alert>
 							<b-alert variant="light" show class="left-border-color-2">快速定位Bug</b-alert>
-							<b-alert variant="light" show class="left-border-color-2">弹性增删业务逻辑，任何业务逻辑的删改，不影响其他板块内容</b-alert>
+							<b-alert variant="light" show class="left-border-color-2">快速定位文件</b-alert>
+							<b-alert variant="light" show class="left-border-color-2">弹性删减业务</b-alert>
+							<b-alert variant="light" show class="left-border-color-2">使项目结构清晰，易于调整</b-alert>
 						</el-tab-pane>
 					</el-tabs>
 
-
-
-					<!--
-								
-						   -*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
-										 笔记规范
-						   -*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
-								  
-					-->
-
-					<v-card-title class="pt-0">
-						<strong>笔记规范</strong>
-						<el-popover placement="top-start" title="说明" width="200" trigger="hover" content="笔记规范说明">
-							<el-button type="text" slot="reference"><i class="el-icon-info pt-1"></i></el-button>
-						</el-popover>
-
-					</v-card-title>
-					<el-tabs tab-position="left">
-						<el-tab-pane label="概览">
-							<b-alert show class="left-border-color-1"> 这是一篇向传统学习方式发起挑战的体系，目前正在完善中</b-alert>
-						</el-tab-pane>
-						<el-tab-pane label="理念">
-							<b-alert show class="left-border-color-1">
-								
-							</b-alert>
-						</el-tab-pane>
-						<el-tab-pane label="规范">
-							<b-alert show class="left-border-color-2"><small>内容分条梳理，言简意赅</small></b-alert>
-							<b-alert show class="left-border-color-2"><small>结构统一，便于搜索</small></b-alert>
-							<b-alert variant="light" show class="left-border-color-2"><small>确保内容准确，有必要则牺牲严谨性，使文字易懂</small></b-alert>
-							<b-alert variant="light" show class="left-border-color-2"><small>不使与关键内容无关的词汇，如形容词、副词等</small></b-alert>
-							<b-alert variant="light" show class="left-border-color-2"><small>不使外语注释</small></b-alert>
-						</el-tab-pane>
-					</el-tabs>
 				</div>
 
 
@@ -73,7 +42,7 @@
 				<div class="col">
 					<el-divider><span class="font-weight-bold">线上作品</span></el-divider>
 					<template>
-						<el-tabs v-model="activeName" @tab-click="handleClick">
+						<el-tabs stretch v-model="activeName" @tab-click="handleClick">
 
 							<!--
 								
@@ -118,10 +87,14 @@
 									   -*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
 									  
 								 -->
-								<el-divider content-position="left">小游戏</el-divider>
+								<el-divider content-position="left">小游戏 
+									<b-icon 
+									v-b-popover.hover.top="`${gameTips}`" 
+									icon="exclamation-circle-fill"></b-icon>
+								</el-divider>
 								<div class="row">
 									<div class="col">
-										<video src="http://134.175.79.33:15005/vue-blog/game.mp4" controls class="img-fluid rounded "></video>
+										<video src="http://134.175.79.33:15005/vue-blog/game.mp4" controls class="img-fluid rounded"></video>
 									</div>
 								</div>
 							</el-tab-pane>
@@ -179,5 +152,33 @@
 </script>
 
 <style scoped>
-	@import url("./css/works.css");
+	.el-timeline-item {
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+	}
+	
+	.my-bgcolor {
+		background-color: #cbf9ff;
+	}
+	
+	
+	
+	.left-border-color-1 {
+		border: none;
+		border-left: 10px solid #00aaff;
+		background-color: #eefbff;
+	
+	}
+	
+	.left-border-color-2 {
+		border: none;
+		border-left: 10px solid #aaaaff;
+		background-color: #efebff;
+	}
+	
+	.left-border-color-3 {
+		border: none;
+		border-left: 10px solid #ffb3d0;
+		background-color: #ffe6ec;
+	}
 </style>

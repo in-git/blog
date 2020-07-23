@@ -6,31 +6,58 @@
 
 <template>
 	<div class="h-100">
-		<b-row no-gutters>
+		<b-row no-gutters class="px-2">
 			<b-col cols=12 xl=5 class="mx-auto">
-				<div>
-					<b-carousel id="carousel-fade" fade indicators img-width="1024" img-height="480">
-						<b-carousel-slide caption="First slide" img-src="https://picsum.photos/1024/480/?image=10"></b-carousel-slide>
-						<b-carousel-slide caption="Second Slide" img-src="https://picsum.photos/1024/480/?image=12"></b-carousel-slide>
-						<b-carousel-slide caption="Third Slide" img-src="https://picsum.photos/1024/480/?image=22"></b-carousel-slide>
-					</b-carousel>
-				</div>
-				<div>
-					<el-divider content-position="left">本站简述</el-divider>
-					<b-alert class="border-left-5 border-left my-bgcolor p-2 mb-2" show v-for="n in 3" :key="n">弹指间丶千年逝 一袭广袖玄衣 一砚清绝酒辞</b-alert>
-				</div>
+				<div v-if="!imgShow">
 
+					<el-carousel :interval="4000" type="card" height="100px">
+						<el-carousel-item v-for="(v,k) in carousel" :key="k">
+							<el-image :src="v" fit="scale-down" class="rounded">
+								<div slot="error" class="image-slot">
+									<i class="el-icon-picture-outline"></i>
+								</div>
+							</el-image>
+						</el-carousel-item>
+					</el-carousel>
+
+					
+				</div>
+				<div v-if="imgShow">
+					<el-carousel :interval="4000" type="card" height="100px">
+						<el-carousel-item class="text-center ">
+							<el-image @error="imgLoad">
+								<div slot="error" class="image-slot ">
+									<i class="el-icon-picture-outline "></i>
+								</div>
+							</el-image>
+						</el-carousel-item>
+					</el-carousel>
+					
+				</div>
+				<!-- 
+					-*-*-常用工具 
+				-->
 				<div>
 					<el-divider content-position="left">常用工具</el-divider>
-					<div class="row">
+					<div class="row no-gutters">
 						<div class="col d-flex">
-							<el-input size="mini" placeholder="请输入内容" clearable>
+							<el-input maxlength="10" size="mini" v-model="md5" placeholder="请输入内容" clearable>
 								<template slot="prepend">md5加密</template>
 							</el-input>
-							<el-button size="mini">提交</el-button>
+							<el-button size="mini" @click="getMd5">提交</el-button>
 						</div>
 					</div>
 				</div>
+				<!-- 
+					-*-*-个人理念 
+				-->
+				<div>
+					<el-divider content-position="left">个人理念</el-divider>
+					<b-alert class="border-left-5 border-left my-bgcolor p-2 mb-2" v-if="n !== null" show v-for="(n,k) in motto" :key="k"
+					 v-text="n"></b-alert>
+				</div>
+
+
 			</b-col>
 
 			<b-col cols=12 xl=6>
@@ -86,7 +113,7 @@
 								<div>
 									<h6 class="font-weight-bold text-center m-0" v-text="i.title"></h6>
 									<div class="px-2">
-										<small v-text="i.description"></small>
+										<small class="text-muted" v-text="i.description"></small>
 
 										<!--
 										 	-*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-

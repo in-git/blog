@@ -6,15 +6,19 @@
 				*-*-*-*-*-*
 		-->
 		<div class="d-xl-none d-lg-none">
-			<b-navbar toggleable="lg" type="dark" variant="dark">
+			<b-navbar toggleable="lg" class="my-bgcolor">
 				<b-navbar-brand href="#">MyBlog</b-navbar-brand>
 
-				<b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+				<b-navbar-toggle class="border-0" target="nav-collapse">
+					<b-icon icon="music-note-list" style="color: #7952b3;"></b-icon>
+				</b-navbar-toggle>
 
 				<b-collapse id="nav-collapse" is-nav>
-					<b-navbar-nav>
-						<b-nav-item href="#">Link</b-nav-item>
-						<b-nav-item href="#" disabled>Disabled</b-nav-item>
+					<b-navbar-nav fill small class="my-bgcolor-light my-color">
+						<b-nav-item href="/">首页</b-nav-item>
+						<b-nav-item href="/home/works">作品</b-nav-item>
+						<b-nav-item href="/home/website">关于本页</b-nav-item>
+						<b-nav-item href="/home/resume">关于我</b-nav-item>
 					</b-navbar-nav>
 				</b-collapse>
 			</b-navbar>
@@ -34,8 +38,11 @@
 			 -->
 			<div class="row no-gutters">
 				<div class="col">
-					<div class="alert my-bgcolor-light my-2 alert-light d-flex justify-content-between mx-xl-4">
-						<div>状态</div>
+					<div class="alert my-bgcolor-light my-2 py-2 alert-light text-center rounded">
+						<div class="">
+							<span class="mdi mdi-bell-outline  text-primary "></span>
+							<span v-text="notice"></span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -63,18 +70,18 @@
 
 			<!--
 				*-*-*-*-*-* 
-					底部jumbotron
+					底部jumbotron PC端
 				*-*-*-*-*-* 
 			 -->
-			
+
 			<div>
-				<div class="jumbotron jumbotron-fluid m-0 fixed-bottom bg-dark text-white rounded-up py-0 d-none d-xl-block">
+				<div class="jumbotron jumbotron-fluid m-0 fixed-bottom bg-dark  rounded-up py-0 d-none d-xl-block">
 					<div class="container">
 						<b-row>
 							<b-col>
-								<b-alert class="text-center my-pointer my-0" variant="white" show>
+								<b-alert class="text-center my-pointer my-0 text-white" variant="white" show>
 									<div @mouseenter="jumbotronShow = !jumbotronShow">
-										只要你足够好,你想要的都会来找你
+										感谢每一个信任过，帮助过我的人
 									</div>
 								</b-alert>
 							</b-col>
@@ -83,13 +90,41 @@
 						<el-collapse-transition>
 							<div v-show="jumbotronShow" class="mb-2">
 								<b-row>
-									<b-col v-for="n in 4" :key='n'>
-										<div class="card ">
-											<div class="card-body pt-0 ">
-												<blockquote class="blockquote m-0">
-													<footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-												</blockquote>
-											</div>
+									<b-col>
+										<!--
+											-----------
+												感谢的公司
+											-----------
+										 -->
+										<div class="card text-black">
+											<b-alert show variant="light" class="m-0 ">
+												<div class="d-flex justify-content-around">
+													加运美有限公司
+												</div>
+											</b-alert>
+										</div>
+									</b-col>
+									<b-col>
+										<!--
+											-----------
+												感谢的人
+											-----------
+										 -->
+										<div class="card text-black">
+											<blockquote class="blockquote m-0">
+												<div>
+													<b-alert show variant="light" class="m-0 ">
+														<div>
+															<el-tag class="ml-2">郑邦</el-tag>
+															<el-tag class="ml-2">胡芳春</el-tag>
+															<el-tag class="ml-2">马武亮</el-tag>
+															<el-tag class="ml-2">刘芬芳</el-tag>
+															<el-tag class="ml-2">蔡志华</el-tag>
+														</div>
+													</b-alert>
+
+												</div>
+											</blockquote>
 										</div>
 									</b-col>
 								</b-row>
@@ -99,6 +134,21 @@
 					</div>
 				</div>
 			</div>
+
+
+	<!--
+				*-*-*-*-*-* 
+					底部jumbotron 移动端
+				*-*-*-*-*-* 
+	-->
+				<div class="d-lg-none d-md-inline-block d-sm-inline-block d-xl-none d-inline-block border-0 w-100 mt-4 ">
+					<b-jumbotron bg-variant="dark"  text-variant="white" fluid class="m-0 py-2  mx-auto rounded">
+						<p>
+							It uses utility classes for typography and spacing to sp
+						</p>
+					</b-jumbotron>
+				</div>
+				
 		</div>
 
 	</div>

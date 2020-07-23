@@ -4,15 +4,15 @@ let attr = {
 		push(url, index) {
 			this.sidebarActive = index
 			f.push(url, this)
-		}
+		},
+		
 	},
 	data() {
 		return {
 			/* 
-				 * - * - * - * - - * - * - * - * - - * - * - * - * - - * - * - * - * -
+				 * - * - * - * - - * - * - * - * - -
 										  左侧导航列表 
-				* - * - * - * - - * - * - * - * - - * - * - * - * - - * - * - * - * -
-			 */
+				* - * - * - * - - * - * - * - * - - */
 			sidebarActive: 0,
 			sidebarClass: 'list-group-item my-index-side-nav border-0 rounded-30  my-3 my-bgcolor d-flex mx-4  justify-content-around',
 			sidebar: [{
@@ -42,8 +42,16 @@ let attr = {
 				},
 			],
 			jumbotronShow: false,
+			notice:'通知信息',
+			
 		}
 	},
-
+mounted(){
+	this.$get('/index/notice').then(data=>{
+		this.notice = data.data
+	}).catch(err=>{
+		console.log(err);
+	})
+}
 }
 export default attr
