@@ -144,8 +144,8 @@
 							<b-input v-model="symbol"></b-input>
 						</div>
 						<div class="d-flex justify-content-end">
-							<b-button class="mt-3 mx-4" variant="danger" @click="back">返回 </b-button>
-							<b-button class="mt-3" variant="success" @click="confirm">确定 </b-button>
+							<b-button class="mt-3 mx-4" variant="outline-danger" @click="back">返回 </b-button>
+							<b-button class="mt-3" variant="outline-success" @click="confirm">确定 </b-button>
 
 						</div>
 					</b-modal>
@@ -153,7 +153,7 @@
 					<!-- 避免访问的内容 -->
 					<div v-if="workShow">
 						<div class="text-center">
-							<b-alert show variant="danger"><strong>你好像动了什么歪脑筋才看到这句话的。回头是岸，回头是岸</strong></b-alert>
+							<b-alert show variant="danger"><strong>你好像动了什么歪脑筋才看到这句话的。少你，回头是岸，回头是岸啊！</strong></b-alert>
 						</div>
 					</div>
 
@@ -179,5 +179,8 @@
 <style scoped>
 	.left-border-5 {
 		border-left: 5px solid powderblue;
+	}
+	.el-timeline{
+		padding-left: 5px !important;
 	}
 </style>

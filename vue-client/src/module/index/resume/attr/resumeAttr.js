@@ -49,7 +49,7 @@ let attr = {
 	data() {
 		return {
 			spares: [{
-					tags: ['Dokcer', '阿里云', 'Nodejs', 'MybatisPlus', '网页备案']
+					tags: ['Dokcer', '阿里云', 'Nodejs', '网页备案', 'MybatisPlus']
 				},
 				{
 					tags: ['计算机网络', '计算机组成原理', '51单片机']
@@ -76,7 +76,7 @@ let attr = {
 					content: '完成SPRINGBOOT,Mysql,Mybatis应用层学习,对应作品API管理中心',
 					timestamp: '2019-12'
 				}, {
-					content: '零基础开启Java之旅',
+					content: '开启Java之旅',
 					timestamp: '2019-10'
 				}
 			],

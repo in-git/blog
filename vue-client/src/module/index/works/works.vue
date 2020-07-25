@@ -87,16 +87,7 @@
 									   -*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
 									  
 								 -->
-								<el-divider content-position="left">小游戏 
-									<b-icon 
-									v-b-popover.hover.top="`${gameTips}`" 
-									icon="exclamation-circle-fill"></b-icon>
-								</el-divider>
-								<div class="row">
-									<div class="col">
-										<video src="http://134.175.79.33:15005/vue-blog/game.mp4" controls class="img-fluid rounded"></video>
-									</div>
-								</div>
+								
 							</el-tab-pane>
 							<el-tab-pane label="2020" name="second">
 

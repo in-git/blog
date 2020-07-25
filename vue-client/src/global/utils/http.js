@@ -11,11 +11,11 @@ if (process.env.NODE_ENV == 'development') {
 }
 //局域网
 else if (process.env.NODE_ENV == 'debug') {
-	axios.defaults.baseURL = 'http://192.168.0.54:4000';
+	axios.defaults.baseURL = 'http://180.102.18.35:15010/';
 }
-// 外网
+// 外网	
 else if (process.env.NODE_ENV == 'production') {
-	axios.defaults.baseURL = 'http://138.1.1.1:4000';
+	axios.defaults.baseURL = 'http://180.102.18.35:15010/';
 }
 /* 
 	功能:

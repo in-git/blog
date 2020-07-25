@@ -163,7 +163,7 @@
 												<div class="m-2 d-flex justify-content-between">
 													<span>IP访问量</span>
 													<span>
-														<el-tag>12</el-tag>
+														<el-tag>{{view}}</el-tag>
 													</span>
 												</div>
 											</b-alert>

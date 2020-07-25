@@ -1,7 +1,7 @@
 let attr = {
 	data() {
 		return {
-
+			view:0,
 			maker: ['UI设计', '前端', '后台', '运维', '美工'],
 			// 评分
 			star: 0,
@@ -157,9 +157,9 @@ let attr = {
 			})
 		},
 		// 获取评分
-		getRate() {
+		getInfo() {
 			
-			this.$get('/website/getRate').then(data => {
+			this.$get('/website/getInfo').then(data => {
 				data = data.data
 				if (data.isStar == -1) {
 					this.isStar = true
@@ -167,6 +167,7 @@ let attr = {
 				if (data.averageStar > 5) {
 					data.averageStar = 5
 				}
+				this.view = data.view
 				this.star = data.averageStar
 			})
 		}
@@ -176,7 +177,7 @@ let attr = {
 		this.getRandomHeadImg()
 		this.getRandomName()
 		this.randomText()
-		this.getRate()
+		this.getInfo()
 	}
 }
 export default attr

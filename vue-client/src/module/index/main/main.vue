@@ -120,9 +120,9 @@
 										 				  复制下载功能
 										 	-*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
 										  -->
-										<p>
+										<div class="d-flex justify-content-around">
 											<span class="mx-2">
-												<el-link slot="reference" :underline="false" type="primary" class="el-icon-view el-icon--right" :href="i.address">访问</el-link>
+												<el-link target="_blank" slot="reference" :underline="false" type="primary" class="el-icon-view el-icon--right" :href="i.address">访问</el-link>
 											</span>
 											<span class="mr-2">
 												<el-link type="primary" :href="i.download" :underline="false">下载</el-link>
@@ -134,7 +134,7 @@
 													</el-button>
 												</el-tooltip>
 											</span>
-										</p>
+										</div>
 
 									</div>
 								</div>

@@ -25,7 +25,7 @@
 		</div>
 		<div class="container  position-absolute my-center p-0 bg-white h-100">
 
-			<div class="row no-gutters ">
+			<div class="row no-gutters " v-loading.fullscreen.lock="fullscreenLoading">
 				<!--
 					*-*-*-*-*-* PC首页 *-*-*-*-*-*
 				 -->
@@ -81,7 +81,7 @@
 							<b-col>
 								<b-alert class="text-center my-pointer my-0 text-white" variant="white" show>
 									<div @mouseenter="jumbotronShow = !jumbotronShow">
-										感谢每一个信任过，帮助过我的人
+										天意怜幽草，人间重晚情
 									</div>
 								</b-alert>
 							</b-col>
@@ -97,34 +97,24 @@
 											-----------
 										 -->
 										<div class="card text-black">
-											<b-alert show variant="light" class="m-0 ">
-												<div class="d-flex justify-content-around">
-													加运美有限公司
-												</div>
+											<b-alert show variant="light" class="m-0 py-2 text-center">
+												<el-link :underline="false" target="_blank" type="primary" href="http://jym56.cn/">加运美有限公司</el-link>
 											</b-alert>
 										</div>
 									</b-col>
 									<b-col>
 										<!--
 											-----------
-												感谢的人
+												开源组织
 											-----------
 										 -->
-										<div class="card text-black">
-											<blockquote class="blockquote m-0">
-												<div>
-													<b-alert show variant="light" class="m-0 ">
-														<div>
-															<el-tag class="ml-2">郑邦</el-tag>
-															<el-tag class="ml-2">胡芳春</el-tag>
-															<el-tag class="ml-2">马武亮</el-tag>
-															<el-tag class="ml-2">刘芬芳</el-tag>
-															<el-tag class="ml-2">蔡志华</el-tag>
-														</div>
-													</b-alert>
-
-												</div>
-											</blockquote>
+										<div class="card text-black ">
+											<b-alert show variant="light" class="m-0 py-2 text-center d-flex justify-content-around">
+												<el-link :underline="false" type="primary" href="https://cn.vuejs.org/">Vue</el-link>
+												<el-link :underline="false" type="primary" href="https://bootstrap-vue.org/docs/icons">bootstrapVue</el-link>
+												<el-link :underline="false" type="primary" href="https://element.eleme.cn/#/zh-CN/component/link">ElementUi</el-link>
+												<el-link :underline="false" type="primary" href="https://spring.io/">Spring</el-link>
+											</b-alert>
 										</div>
 									</b-col>
 								</b-row>
@@ -136,19 +126,19 @@
 			</div>
 
 
-	<!--
+			<!--
 				*-*-*-*-*-* 
 					底部jumbotron 移动端
 				*-*-*-*-*-* 
 	-->
-				<div class="d-lg-none d-md-inline-block d-sm-inline-block d-xl-none d-inline-block border-0 w-100 mt-4 ">
-					<b-jumbotron bg-variant="dark"  text-variant="white" fluid class="m-0 py-2  mx-auto rounded">
-						<p>
-							It uses utility classes for typography and spacing to sp
-						</p>
-					</b-jumbotron>
-				</div>
-				
+			<div class="d-lg-none d-md-inline-block d-sm-inline-block d-xl-none d-inline-block border-0 w-100 mt-4 ">
+				<b-jumbotron bg-variant="dark" text-variant="white" fluid class="m-0 py-2  mx-auto rounded">
+					<div class="text-center">
+						<span>天意怜幽草，人间重晚情</span>
+					</div>
+				</b-jumbotron>
+			</div>
+
 		</div>
 
 	</div>
