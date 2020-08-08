@@ -21,7 +21,7 @@ public class WebInterceptor implements HandlerInterceptor {
         AbstractApplicationContext ac = (AbstractApplicationContext) SpringContextUtil.getApplicationContext();
         String remoteAddr = Tools.getRemoteAddr(request);
         RedisUtil jedis = ac.getBean(RedisUtil.class);
-        jedis.sadd("pv" , remoteAddr);
+        jedis.sadd("view" , remoteAddr);
         return true;
     }
 }

@@ -112,7 +112,6 @@ let attr = {
 
 		},
 		handleClick(tab, event) {
-
 			if (tab.name == 'message') {
 				this.getMessages()
 			}
@@ -123,7 +122,7 @@ let attr = {
 		},
 		// 获取消息
 		getMessages(page = 1) {
-			this.isLocked = true
+			// this.isLocked = true
 			this.messages = []
 			let data = {
 				page: page
@@ -134,36 +133,43 @@ let attr = {
 					this.messages.push(e)
 				})
 				// 屏幕加载中..
-				this.isLocked = false
+				// this.isLocked = false
 			})
 		},
 		// 评分系统
 		setRate() {
-			let data = {
-				star: this.star
+			if(this.star < 4){
+				this.$message({
+					message: '由于你的评分低于4分，经过四舍五入，化成五星好评',
+					type: 'success'
+				})
+				this.star = 5
 			}
-			this.$get('/website/setRate', data).then(data => {
+			this.$get('/website/setRate/'.concat(this.star)).then(data => {
+				
 				if (data.sys_msg == 10) {
 					this.$message({
 						message: '评分成功',
 						type: 'success'
 					})
 				}
+				if(data.sys_msg === 40){
+					this.$message({
+						message: '评分失败，你可能已经评价过了',
+						type: 'error'
+					})
+				}
 
+			}).catch(err=>{
+				
 			})
-			this.$message({
-				message: '评分失败',
-				type: 'error'
-			})
+			
 		},
 		// 获取评分
 		getInfo() {
 			
 			this.$get('/website/getInfo').then(data => {
 				data = data.data
-				if (data.isStar == -1) {
-					this.isStar = true
-				}
 				if (data.averageStar > 5) {
 					data.averageStar = 5
 				}

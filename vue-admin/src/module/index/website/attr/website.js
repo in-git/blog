@@ -74,6 +74,7 @@ let attr = {
 		/* 根据ID删除元素 */
 		deleteMessage(id) {
 			this.$get('/user/website/deleteMessage/' + id).then(data => {
+				console.log(data);
 				if (30 == data.sys_status) {
 					this.messages = this.messages.filter(e => {
 						return id != e.id

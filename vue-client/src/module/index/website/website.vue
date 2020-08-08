@@ -1,12 +1,10 @@
 <template>
 	<div>
-
+		<!--===============
+	功能:对整个网页进行描述
+===============-->
 		<div class="row text-center text-truncate no-gutters ">
-			<!--
-				*-*-*-*-*-* 
-					左区
-				*-*-*-*-*-* 
-			 -->
+
 			<div class="col col-12 col-xl-6 col-lg-12 ">
 
 				<div class="row ">
@@ -17,11 +15,9 @@
 
 				<div class="row my-bgcolor-1 no-gutters">
 					<div class="col ">
-						<!--
-							*-*-*-*-*-* 
+						<!--===============
 								数据库
-							*-*-*-*-*-* 
-						 -->
+							===============-->
 						<div class="d-flex flex-column">
 
 							<div>
@@ -47,9 +43,9 @@
 				</div>
 
 				<!--
-					*-*-*-*-*-* 
+					===============
 						服务器端
-					*-*-*-*-*-* 
+					===============
 				 -->
 				<div class="row my-bgcolor-2 no-gutters">
 					<div class="col text-center">
@@ -64,11 +60,10 @@
 						</el-popover>
 					</div>
 				</div>
-				<!--
-				*-*-*-*-*-* 
+
+				<!--===============
 					静态页面
-				*-*-*-*-*-* 
-			 -->
+				===============-->
 				<div class="row my-bgcolor-1 no-gutters">
 
 					<div class="col">
@@ -101,9 +96,9 @@
 						</div>
 
 						<!--
-							 	*-*-*-*-*-* 
+							 	===============
 							 		Nginx
-							 	*-*-*-*-*-* 
+							 	===============
 							 -->
 						<div class="d-flex flex-column">
 							<img src="@/global/img/website/db-arrow.svg" class="pt-1">
@@ -116,11 +111,9 @@
 					</div>
 				</div>
 
-				<!--
-						*-*-*-*-*-* 
-							用户请求
-						*-*-*-*-*-* 
-					 -->
+				<!--===============
+					用户请求
+				===============-->
 				<div class="row my-bgcolor-2 no-gutters">
 					<div class="col">
 						<!-- 指示箭头 -->
@@ -137,19 +130,12 @@
 
 			</div>
 
-
 			<!--
-				*-*-*-*-*-* 
-					右区
-				*-*-*-*-*-* 
+				===============
+					留言区
+				===============
 			 -->
 			<div class="col col-12 col-xl-6 col-lg-12 text-center pl-2">
-
-				<!--
-					*-*-*-*-*-* 
-						结构设计
-					*-*-*-*-*-* 
-				 -->
 				<div class="row">
 					<div class="col">
 						<el-tabs stretch v-model="activeTab" @tab-click="handleClick">
@@ -157,7 +143,7 @@
 								<span slot="label"><span class="mdi mdi-diving-flippers mr-1"></span>本站信息</span>
 								<div class="card border-0">
 									<div class="card-body">
-										
+
 										<div>
 											<b-alert class="my-bgcolor-3 bg-transparent border-top-5 py-1" show>
 												<div class="m-2 d-flex justify-content-between">
@@ -168,7 +154,7 @@
 												</div>
 											</b-alert>
 										</div>
-										
+
 										<div>
 											<b-alert class="my-bgcolor-3 bg-transparent border-top-5 py-1" show>
 												<div class="m-2 d-flex justify-content-between">
@@ -202,52 +188,51 @@
 											</b-alert>
 										</div>
 
-										<div class="">
+										<div>
 											<b-alert show class="my-bgcolor-3 border-top-5 bg-transparent d-flex justify-content-between">
 												<span>本站评分</span>
 												<el-rate v-model="star" class="pt-1"></el-rate>
-												<el-button :disabled="isStar" size="mini" @click="setRate">确定</el-button>
+												<el-button :disabled="!isStar" size="mini" @click="setRate">确定</el-button>
 											</b-alert>
-
 										</div>
-
 									</div>
 								</div>
 							</el-tab-pane>
 
 							<!--
-								*-*-*-*-*-* 
+								===============
 									在线留言
-								*-*-*-*-*-* 
+								===============
 							 -->
 							<el-tab-pane name="message">
 								<span slot="label" v-loading.fullscreen.lock="isLocked"><span class="mdi mdi-dlna mr-1"></span>在线留言</span>
+
+								<b-row>
+									<b-col cols="8" v-show="messageBorderShow">
+										<el-pagination @current-change="handleCurrentChange" :current-page.sync="pages.currentPage" :page-size="5"
+										 small layout="total, prev, pager, next" :total="pages.total">
+										</el-pagination>
+									</b-col>
+									
+									<b-col cols="8" v-show="!messageBorderShow">
+										<b-alert variant="light" class="m-0 text-left text-primary" show>在线留言</b-alert>
+									</b-col>
+									
+									<b-col class="text-right my-auto ">
+										<el-button size="mini" round @click="messageBorderShow = !messageBorderShow">
+											{{messageBorderShow === false ? temp.msgText[1]:temp.msgText[0]}}
+										</el-button>
+									</b-col>
+								</b-row>
+
 								<div class="row">
 									<div class="col ">
-										<div class="   mr-3">
-											<b-row>
-												<b-col cols="8" v-show="messageBorderShow">
-													<el-pagination @current-change="handleCurrentChange" :current-page.sync="pages.currentPage" :page-size="5"
-													 small layout="total, prev, pager, next" :total="pages.total">
-													</el-pagination>
-												</b-col>
-												<b-col class="pr-0" cols="8" v-show="!messageBorderShow">
-													<b-alert variant="light" class="m-0 text-left text-primary" show>在线留言</b-alert>
-												</b-col>
-												<b-col class="text-right my-auto">
-													<el-button round @click="messageBorderShow = !messageBorderShow">
-														{{messageBorderShow === false ? temp.msgText[1]:temp.msgText[0]}}
-													</el-button>
-												</b-col>
-											</b-row>
-
-										</div>
-										<!--
-									*-*-*-*-*-*展示留言面板*-*-*-*-*-* 
-								 -->
+										<!--===============
+											功能:展示留言面板
+										===============-->
 										<div v-if="messageBorderShow">
 											<b-row v-for="(e,i) in messages" :key="i">
-												<b-col class="my-auto" cols=2>
+												<b-col class="mt-2" cols=2>
 													<img :src="e.imgSrc" class="rounded img-fluid">
 												</b-col>
 												<b-col class="pl-0">
@@ -276,21 +261,28 @@
 													</b-popover>
 												</b-col>
 											</b-row>
-
 										</div>
 
 										<!-- 留言 -->
 										<div v-if="!messageBorderShow">
-											<b-row>
-												<b-col cols="12" class="mt-2">
-													<b-alert variant="primary" show>
-														<div class="d-flex justify-content-between">
-															<b-img rounded :src="randomHeadImg" fluid width="40"> </b-img>
-															<el-select v-model="sexValue" placeholder="请选择">
-																<el-option v-for="item in sex" :key="item.value" :label="item.label" :value="item.value">
-																</el-option>
-															</el-select>
-															<el-button round size="mini" @click="getRandomHeadImg">切换头像</el-button>
+											<div class="card border-0">
+												<div class="card-body">
+													<b-alert variant="primary" class="pl-1 pr-1" show>
+														<div class="container">
+															<div class="row  justify-content-between">
+																<div class="col col-4 pr-1 text-center">
+																	<el-image class="rounded" :src="randomHeadImg" style="width: 60px" fit="scale-down"></el-image>
+																</div>
+																<div class="col align-self-center  col-4 px-0">
+																	<el-select v-model="sexValue" placeholder="请选择">
+																		<el-option v-for="item in sex" :key="item.value" :label="item.label" :value="item.value">
+																		</el-option>
+																	</el-select>
+																</div>
+																<div class="col pl-1 align-self-center col-4">
+																	<el-button @click="getRandomHeadImg">切换头像</el-button>
+																</div>
+															</div>
 														</div>
 													</b-alert>
 
@@ -307,8 +299,9 @@
 													<div class="mt-2">
 														<b-btn block variant="outline-primary" @click="sendMsg">提交</b-btn>
 													</div>
-												</b-col>
-											</b-row>
+
+												</div>
+											</div>
 
 										</div>
 									</div>

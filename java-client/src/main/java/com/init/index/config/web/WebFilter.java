@@ -1,6 +1,8 @@
 package com.init.index.config.web;
 
+import com.init.index.config.redis.RedisUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.*;
@@ -10,8 +12,13 @@ import java.io.IOException;
 @Slf4j
 @Component
 public class WebFilter implements javax.servlet.Filter {
+    @Autowired
+    RedisUtil jedis;
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
+        if(!jedis.exists("love")){
+            jedis.set("love","400");
+        }
     }
 
     @Override

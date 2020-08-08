@@ -8,7 +8,7 @@ import org.springframework.validation.annotation.Validated;
  * 功能:统一行为管理
  * */
 public interface Action {
-    ResultInfo login ( @Validated Users user , String remeberMe );
-    ResultInfo register ( @Validated Users user );
+    ResultInfo login(@Validated Users user, String remeberMe);
+    ResultInfo register(@Validated Users user);
 
 }

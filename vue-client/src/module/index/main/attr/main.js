@@ -4,7 +4,6 @@ let attr = {
 	mounted() {
 		this.getGithubs()
 		this.$get('/index/weblist').then(data => {
-			console.log(data);
 			data =data.data
 			data.weblists.forEach(e => {
 				this.nav.push(e)
@@ -23,15 +22,12 @@ let attr = {
 	data() {
 		return {
 			imgShow: true,
-			github: [
-
-			],
+			github: [],
 			nav: [],
 			input: '',
 			carousel: [],
 			motto: [],
 			md5: '',
-			
 		};
 	},
 	methods: {

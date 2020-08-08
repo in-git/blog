@@ -2,13 +2,11 @@
 	<div>
 		<v-container>
 			<v-row no-gutters>
-				<v-col cols=10 lg=10 class="mx-auto"	>
-					<!--
-					
-						-*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
-									  顶部增加
-						-*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
-					
+				<v-col cols=10 lg=10 class="mx-auto">
+					<!--						
+						======================
+							顶部增加
+						======================
 					-->
 					<v-alert class="ma-0 ">
 						<div class="d-flex justify-space-between ">
@@ -24,7 +22,7 @@
 											<v-icon dark>mdi-plus</v-icon>
 										</v-btn>
 									</template>
-									<v-card>
+									<v-card elevation=0>
 										<v-card-title class="headline grey lighten-2" primary-title>
 											添加列表
 										</v-card-title>
@@ -78,7 +76,7 @@
 			-->
 			<v-row>
 				<v-col cols=10 lg=10 class="mx-auto">
-					<v-simple-table>
+					<v-simple-table >
 						<template v-slot:default>
 							<thead>
 								<tr>

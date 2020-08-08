@@ -20,5 +20,5 @@ public interface iWeblistMapper extends BaseMapper < Weblist > {
             + " tipsTitle = #{tipsTitle} , href = #{href}"
             + "where id = #{id}" )
     @Results()
-    Integer updateWeblist ( Weblist weblist  );
+    Integer updateWeblist(Weblist weblist);
 }

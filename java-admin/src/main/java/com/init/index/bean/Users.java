@@ -20,7 +20,7 @@ public class Users implements Serializable {
     private String passwd;
     private String salt;
     //       黑名单
-    private Integer balck;
+    private Integer black;
     //       登录受限
     private Integer restrictd;
 }

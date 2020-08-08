@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
 import java.util.Properties;
@@ -24,5 +25,11 @@ public class BeanConfig {
     @Bean  
     public ServerEndpointExporter serverEndpointExporter() {  
         return new ServerEndpointExporter();
+    }
+
+    @Bean
+    public RestTemplate restTemplate(){
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate;
     }
 }

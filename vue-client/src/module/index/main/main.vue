@@ -1,17 +1,18 @@
-<!--
-	*-*-*-*-*-* 
-		第一页:常用网页，本站简述 
-	*-*-*-*-*-*
- -->
+<!--===============
+第一页:常用网页，本站简述 
+===============-->
 
 <template>
 	<div class="h-100">
 		<b-row no-gutters class="px-2">
 			<b-col cols=12 xl=5 class="mx-auto">
+				
+				<!--===============
+					 轮播图
+				===============-->
 				<div v-if="!imgShow">
-
 					<el-carousel :interval="4000" type="card" height="100px">
-						<el-carousel-item v-for="(v,k) in carousel" :key="k">
+						<el-carousel-item v-for="(v,k) in carousel" :key="k" class="text-center">
 							<el-image :src="v" fit="scale-down" class="rounded">
 								<div slot="error" class="image-slot">
 									<i class="el-icon-picture-outline"></i>
@@ -19,9 +20,8 @@
 							</el-image>
 						</el-carousel-item>
 					</el-carousel>
-
-					
 				</div>
+				
 				<div v-if="imgShow">
 					<el-carousel :interval="4000" type="card" height="100px">
 						<el-carousel-item class="text-center ">
@@ -32,11 +32,11 @@
 							</el-image>
 						</el-carousel-item>
 					</el-carousel>
-					
 				</div>
-				<!-- 
-					-*-*-常用工具 
-				-->
+				
+				<!--===============
+					 常用工具 
+				===============-->
 				<div>
 					<el-divider content-position="left">常用工具</el-divider>
 					<div class="row no-gutters">
@@ -48,53 +48,41 @@
 						</div>
 					</div>
 				</div>
-				<!-- 
-					-*-*-个人理念 
-				-->
+				
+				<!-- ===============
+					 个人理念 
+				=============== -->
 				<div>
 					<el-divider content-position="left">个人理念</el-divider>
 					<b-alert class="border-left-5 border-left my-bgcolor p-2 mb-2" v-if="n !== null" show v-for="(n,k) in motto" :key="k"
 					 v-text="n"></b-alert>
 				</div>
-
-
 			</b-col>
 
 			<b-col cols=12 xl=6>
-				<!--
-					
-					   -*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
-					                 常用网页
-					   -*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
-					  
-				 -->
+
+				<!-- ===============
+					   常用网页
+				  ===============-->
 				<b-alert show variant="light" class="blockquote-footer m-0">
 					<span class="mdi mdi-near-me mr-2"></span>
 					<span>常用网页</span>
 				</b-alert>
 
-				<div>
-					<b-row no-gutters cols=3>
-						<b-col v-for="n in nav" :key="n.id" class="mb-3 text-center">
+				<b-row no-gutters cols=3>
+					<b-col v-for="n in nav" :key="n.id" class="mb-3 text-center">
+						<el-popover placement="top-start" :title="n.tipsTitle" trigger="hover" :content="n.tips">
+							<el-button @click="push(`${n.href}`)" slot="reference" size=small class="my-button-link">
+								<span :class="['mdi',`${n.icon}`,'px-1', 'my-color']"></span>
+								<small class="ml-1" v-text="n.name"></small>
+							</el-button>
+						</el-popover>
+					</b-col>
+				</b-row>
 
-							<el-popover placement="top-start" :title="n.tipsTitle" trigger="hover" :content="n.tips">
-
-								<el-button @click="push(`${n.href}`)" slot="reference" size=small class="my-button-link">
-									<span :class="['mdi',`${n.icon}`,'mx-1', 'my-color']"></span>
-									<small class="mx-1" v-text="n.name"></small>
-								</el-button>
-
-							</el-popover>
-
-						</b-col>
-					</b-row>
-				</div>
-
-				<!--
-					-*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
-								  Github
-					-*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
-				 -->
+				<!--===============
+						Github
+				===============-->
 				<b-alert show variant="light" class="blockquote-footer m-0">
 					<span class="mdi mdi-gitlab mr-2"></span>
 					<span>Github</span>
@@ -105,24 +93,23 @@
 						<b-row no-gutters>
 							<b-col cols="6" sm=3 md=5 xl=4 class="pr-2">
 								<div class="d-flex justify-content-center">
-									<b-img :src="i.img" fluid alt="Fluid image" rounded></b-img>
+									<el-image :src="i.img" fit="scale-down"></el-image>
 								</div>
 							</b-col>
 
-							<b-col>
+							<b-col cols="6">
 								<div>
 									<h6 class="font-weight-bold text-center m-0" v-text="i.title"></h6>
 									<div class="px-2">
 										<small class="text-muted" v-text="i.description"></small>
 
-										<!--
-										 	-*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
-										 				  复制下载功能
-										 	-*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
-										  -->
+										<!--===============
+										 	 复制下载功能
+										 	===============-->
 										<div class="d-flex justify-content-around">
 											<span class="mx-2">
-												<el-link target="_blank" slot="reference" :underline="false" type="primary" class="el-icon-view el-icon--right" :href="i.address">访问</el-link>
+												<el-link target="_blank" slot="reference" :underline="false" type="primary" class="el-icon-view el-icon--right"
+												 :href="i.address">访问</el-link>
 											</span>
 											<span class="mr-2">
 												<el-link type="primary" :href="i.download" :underline="false">下载</el-link>

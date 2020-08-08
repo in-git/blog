@@ -40,7 +40,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>Init</title>
+		<title>后台管理中心</title>
 	</head>
 	<body>
 
@@ -51,8 +51,22 @@
 		<div id="app">
 			<template>
 				<v-app id="inspire">
+					<v-navigation-drawer v-model="drawer" app>
+						<v-list dense>
+							<v-list-item link>
+								<v-list-item-action>
+									<v-icon>mdi-home</v-icon>
+								</v-list-item-action>
+								<v-list-item-content>
+									<v-list-item-title>主页</v-list-item-title>
+								</v-list-item-content>
+							</v-list-item>
+
+						</v-list>
+					</v-navigation-drawer>
 
 					<v-app-bar app dark>
+						<v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 						<v-toolbar-title>管理中心</v-toolbar-title>
 					</v-app-bar>
 
@@ -60,41 +74,36 @@
 
 						<v-container class="fill-height" fluid>
 							<v-row align="center" justify="center">
-								<v-col cols=12>
-									<div class="display-1 text-center">
-										后台管理
-									</div>
-								</v-col>
 								<v-col cols=12 xl=6 md=8>
 
-									<v-card>
-										<!-- 标题 -->
-										<v-card-title class="headline grey lighten-2" primary-title>登录注册</v-card-title>
-										<!-- 内容 -->
-										<v-card-text>
-											<template>
-												<v-form ref="form" v-model="valid" lazy-validation>
-													<v-text-field :counter="10" maxlength="10" label="名字" :rules="rules" v-model="user.username"></v-text-field>
-													<v-text-field :counter="20" maxlength="20" label="密码" type="password" :rules="rules" v-model="user.passwd"></v-text-field>
-													<!-- 记住我 -->
-													<v-checkbox v-model="user.rememberMe" label="记住我"></v-checkbox>
-													<div class="d-flex justify-content-between">
-														<v-btn :disabled="!valid" color="success" @click="validate">
-															注册
-														</v-btn>
-														<v-btn :disabled="!valid" color="info" @click="validate(0)">
-															登录
-														</v-btn>
-													</div>
-												</v-form>
-											</template>
+									<!-- 注册 -->
+									<div class="text-center">
 
-										</v-card-text>
-									</v-card>
+										<v-card>
+											<!-- 标题 -->
+											<v-card-title class="headline grey lighten-2" primary-title>登录注册</v-card-title>
+											<!-- 内容 -->
+											<v-card-text>
+												<template>
+													<v-form ref="form" v-model="valid" lazy-validation>
+														<v-text-field :counter="10" maxlength="10" label="名字" :rules="rules" v-model="user.username"></v-text-field>
+														<v-text-field :counter="20" maxlength="20" label="密码" type="password" :rules="rules" v-model="user.passwd"></v-text-field>
+														<!-- 记住我 -->
+														<v-checkbox v-model="user.rememberMe" label="记住我"></v-checkbox>
+														<div class="d-flex justify-content-end">
+															<v-btn :disabled="!valid" color="info" @click="validate(0)">
+																登录
+															</v-btn>
+														</div>
+													</v-form>
+												</template>
+
+											</v-card-text>
+										</v-card>
+									</div>
 
 
 								</v-col>
-
 							</v-row>
 						</v-container>
 					</v-main>

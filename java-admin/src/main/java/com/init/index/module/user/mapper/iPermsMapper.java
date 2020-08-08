@@ -1,7 +1,9 @@
 package com.init.index.module.user.mapper;
 
+import com.init.index.bean.Users;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -23,5 +25,8 @@ public interface iPermsMapper {
             + "\tINNER JOIN users AS u ON u.id = ru.id \n"
             + "WHERE\n"
             + "\tu.username = #{username}")
-    List<String> selectPerms ( String username );
+    List<String> selectPerms(String username);
+
+
+
 }

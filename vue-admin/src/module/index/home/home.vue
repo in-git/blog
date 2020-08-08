@@ -11,91 +11,92 @@
 			</v-tabs>
 
 			<v-tabs-items v-model="tab">
-				<!--
-					-*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
+
+				<!--======================================
 								  修改导航列表
-					-*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
-				-->
+					======================================-->
 				<v-tab-item>
 					<v-card flat>
 
 						<v-row>
 							<v-col md=10 lg=12 xl=12>
-								<v-card>
+								<v-card elevation=0>
 									<weblist></weblist>
 								</v-card>
 							</v-col>
 						</v-row>
 					</v-card>
 				</v-tab-item>
-				<!--
-			
-				-*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
-							  座右铭管理
-				-*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
-			
-			-->
+
+				<!--======================================
+								  座右铭管理
+					======================================-->
 				<v-tab-item>
 					<v-card flat>
 						<v-row justify="center">
 							<v-col md=10 lg=6>
 								<template>
-									<v-card>
+									<v-card elevation=0>
 										<v-img class="white--text align-end" height="150px" src="@/assets/home/docks.jpg">
 											<v-card-title>总访问人数{{redis.view}}</v-card-title>
 										</v-img>
 
 										<v-card-subtitle class="pb-0">座右铭管理</v-card-subtitle>
 
-										<v-card-text class="text--primary">
-											<v-row>
-												<v-col cols=9>
-													<v-text-field prepend-icon="mdi-flower-poppy" counter="30" flat messages="座右铭1" dense v-model="redis.motto1"
-													 label="请输入座右铭" solo-inverted></v-text-field>
-												</v-col>
-												<v-col>
-													<v-btn block outlined color="purple" @click="updateMotto(1,redis.motto1)">修改</v-btn>
-												</v-col>
-											</v-row>
-											<v-row>
-												<v-col cols=9>
-													<v-text-field prepend-icon="mdi-card-text" counter="30" flat messages="座右铭2" dense v-model="redis.motto2"
-													 label="请输入座右铭" solo-inverted></v-text-field>
-												</v-col>
-												<v-col>
-													<v-btn outlined color="purple" block @click="updateMotto(2,redis.motto2)">修改</v-btn>
-												</v-col>
-											</v-row>
-											<v-row>
-												<v-col cols=9>
-													<v-text-field prepend-icon="mdi-flower-tulip-outline" counter="30" flat messages="座右铭3" dense v-model="redis.motto3"
-													 label="请输入座右铭" solo-inverted></v-text-field>
-												</v-col>
-												<v-col>
-													<v-btn outlined block color="purple" @click="updateMotto(3,redis.motto3)">修改</v-btn>
-												</v-col>
-											</v-row>
 
-											<v-row>
-												<v-col cols=9>
-													<v-text-field prepend-icon="mdi-flower-tulip-outline" counter="30" flat messages="3天以内都是新通知" dense v-model="redis.notice"
-													 label="更新通知" solo-inverted></v-text-field>
-												</v-col>
-												<v-col>
-													<v-btn outlined block color="purple" @click="updateNotice">修改</v-btn>
-												</v-col>
-											</v-row>
+										<v-row>
+											<v-col>
+												<div class="d-flex flex-column">
+													<v-card class="pa-4" elevation=0>
+														<div class="d-flex ">
+															<v-text-field prepend-icon="mdi-flower-poppy" flat messages="座右铭1" dense v-model="redis.motto1" label="请输入座右铭"
+															 solo-inverted></v-text-field>
+															<v-btn class="ml-2" outlined color="purple" @click="updateMotto(1,redis.motto1)">修改</v-btn>
+														</div>
+													</v-card>
+												</div>
 
-											<v-row>
-												<v-col cols=9>
-													<v-text-field prepend-icon="mdi-flower-tulip-outline" counter="50" flat messages="查看工作经历的密钥" dense v-model="redis.signal"
-													 label="设置密钥" solo-inverted></v-text-field>
-												</v-col>
-												<v-col>
-													<v-btn outlined block color="purple" @click="updateNotice">修改</v-btn>
-												</v-col>
-											</v-row>
-										</v-card-text>
+												<div class="d-flex flex-column">
+													<v-card class="pa-4" elevation=0>
+														<div class="d-flex">
+															<v-text-field prepend-icon="mdi-card-text" flat messages="座右铭2" dense v-model="redis.motto2" label="请输入座右铭"
+															 solo-inverted></v-text-field>
+															<v-btn class="ml-2" outlined color="purple" @click="updateMotto(2,redis.motto2)">修改</v-btn>
+														</div>
+													</v-card>
+												</div>
+
+												<div class="d-flex flex-column">
+													<v-card class="pa-4" elevation=0>
+														<div class="d-flex">
+															<v-text-field prepend-icon="mdi-flower-tulip-outline" flat messages="座右铭3" dense v-model="redis.motto3"
+															 label="请输入座右铭" solo-inverted></v-text-field>
+															<v-btn class="ml-2" outlined color="purple" @click="updateMotto(3,redis.motto3)">修改</v-btn>
+														</div>
+													</v-card>
+												</div>
+
+												<div class="d-flex flex-column">
+													<v-card class="pa-4" elevation=0>
+														<div class="d-flex">
+															<v-text-field prepend-icon="mdi-flower-tulip-outline" counter="30" flat messages="3天以内都是新通知" dense
+															 v-model="redis.notice" label="更新通知" solo-inverted></v-text-field>
+															<v-btn class="ml-2" outlined color="purple" @click="updateNotice">修改</v-btn>
+														</div>
+													</v-card>
+												</div>
+
+												<div class="d-flex flex-column">
+													<v-card class="pa-4" elevation=0>
+														<div class="d-flex">
+															<v-text-field prepend-icon="mdi-flower-tulip-outline" counter="50" flat messages="查看工作经历的密钥" dense
+															 v-model="redis.signal" label="设置密钥" solo-inverted></v-text-field>
+															<v-btn class="ml-2" outlined color="purple" @click="updateNotice">修改</v-btn>
+														</div>
+													</v-card>
+												</div>
+											</v-col>
+										</v-row>
 
 									</v-card>
 								</template>
@@ -104,15 +105,11 @@
 						</v-row>
 					</v-card>
 				</v-tab-item>
-				<!--
-
-	-*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
-				  修改轮播图
-	-*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
-
--->
+		<!-- ======================================
+						修改轮播图
+			====================================== -->
 				<v-tab-item>
-					<v-card flat>
+					<v-card elevation=0 flat>
 						<v-row>
 							<v-col class="mx-auto" xl=8>
 								<!-- -*-*-*-*- 扩展面板 -*-*-*-*- -->
@@ -178,28 +175,19 @@
 
 
 				<!--
-
-				-*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
-							  Github管理
-				-*-*-*-*- -*-*-*-*- -*-*-*-*- -*-*-*-*-
-
-			-->
+					======================================
+								  Github管理
+					======================================
+				-->
 				<v-tab-item>
 
-					<!--
-				
-					追加，修改
-				
-				-->
-
+					<!--追加，修改-->
 					<template>
 						<div>
-							<v-app-bar color="white black--text  accent-4" dense>
+							<v-app-bar color="white black--text accent-4" elevation=0 dense>
 
 								<v-toolbar-title>Github管理</v-toolbar-title>
-
 								<v-spacer></v-spacer>
-
 								<v-btn icon>
 									<v-icon color="pink">mdi-heart</v-icon>
 								</v-btn>
@@ -212,7 +200,7 @@
 					<v-row v-if="githubVar.alt">
 						<v-col>
 							<template>
-								<v-data-table hide-default-footer :headers="githubHeads" :items="githubs" :items-per-page="5" class="elevation-1">
+								<v-data-table hide-default-footer :headers="githubHeads" :items="githubs" :items-per-page="3">
 									<template v-slot:item.img="{ item }">
 										<v-chip>
 											<el-link target="_blank" :href="`${item.img}`">点击访问</el-link>
@@ -238,8 +226,7 @@
 									</template>
 
 									<template v-slot:item.description="{ item }">
-										<el-popover placement="top-start" title="提示" width="200" trigger="hover" :content="`${item.description}`">
-											<el-button slot="reference">查看描述</el-button>
+										<el-button slot="reference">查看描述</el-button>
 										</el-popover>
 
 									</template>
@@ -248,30 +235,25 @@
 									<template v-slot:item.action="{ item }">
 										<div class="text-center">
 											<v-menu offset-y>
+
 												<template v-slot:activator="{ on, attrs }">
 													<v-btn color="primary" dark v-bind="attrs" v-on="on">
 														操作
 													</v-btn>
 												</template>
 
-
-
 												<v-list>
-													<v-list-item>
 
+													<v-list-item>
 														<v-list-item-title>
 															<v-btn color="blue" @click="openGithub(item)">更新</v-btn>
 														</v-list-item-title>
-
-
 													</v-list-item>
 
 													<v-list-item>
-
 														<v-list-item-title>
 															<v-btn color="pink" @click="deleteGithub(item)">删除</v-btn>
 														</v-list-item-title>
-
 													</v-list-item>
 
 												</v-list>
@@ -281,17 +263,10 @@
 								</v-data-table>
 							</template>
 
-
 						</v-col>
-
 					</v-row>
 
-
-					<!--
-				
-					追加，修改
-					
-				-->
+					<!--追加，修改-->
 					<v-row v-if="!githubVar.alt">
 						<v-col cols=4 class="mx-auto">
 

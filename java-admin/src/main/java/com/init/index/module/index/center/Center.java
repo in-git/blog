@@ -33,9 +33,9 @@ public class Center {
     /*
      * 功能:注册
      * */
-    @ResponseBody
-    @GetMapping("register")
-    public ResultInfo register(@Validated Users user) {
-        return service.register(user);
-    }
+//    @ResponseBody
+//    @GetMapping("register")
+//    public ResultInfo register(@Validated Users user) {
+//        return service.register(user);
+//    }
 }

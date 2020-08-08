@@ -1,10 +1,8 @@
 <template>
 	<div class="h-100">
-		<!--
-				*-*-*-*-*-* 
-				  手机首页 
-				*-*-*-*-*-*
-		-->
+		<!--===============
+				手机首页 
+			===============-->
 		<div class="d-xl-none d-lg-none">
 			<b-navbar toggleable="lg" class="my-bgcolor">
 				<b-navbar-brand href="#">MyBlog</b-navbar-brand>
@@ -23,19 +21,17 @@
 				</b-collapse>
 			</b-navbar>
 		</div>
+
 		<div class="container  position-absolute my-center p-0 bg-white h-100">
 
+			<!-- =============== PC首页 =============== -->
 			<div class="row no-gutters " v-loading.fullscreen.lock="fullscreenLoading">
-				<!--
-					*-*-*-*-*-* PC首页 *-*-*-*-*-*
-				 -->
 				<div class="col  d-none d-xl-block d-lg-block">
 					<img src="@/global/img/index/bgimg.png" class="img-fluid rounded-bottom">
 				</div>
 			</div>
-			<!--
-				*-*-*-*-*-* 公告框 *-*-*-*-*-*
-			 -->
+
+			<!-- =============== 公告框 =============== -->
 			<div class="row no-gutters">
 				<div class="col">
 					<div class="alert my-bgcolor-light my-2 py-2 alert-light text-center rounded">
@@ -47,9 +43,7 @@
 				</div>
 			</div>
 
-			<!--
-				*-*-*-*-*-* 侧边导航 *-*-*-*-*-*
-			 -->
+			<!--=============== 侧边导航 ===============-->
 			<div class="row no-gutters ">
 				<div class="col col-12 col-xl-3 col-lg-3 d-none d-xl-block d-lg-block">
 					<ul class="list-group text-center mr-4  rounded h-100">
@@ -68,12 +62,9 @@
 
 			</div>
 
-			<!--
-				*-*-*-*-*-* 
-					底部jumbotron PC端
-				*-*-*-*-*-* 
-			 -->
-
+<!-- ===============
+底部jumbotron PC端
+=============== -->
 			<div>
 				<div class="jumbotron jumbotron-fluid m-0 fixed-bottom bg-dark  rounded-up py-0 d-none d-xl-block">
 					<div class="container">
@@ -91,11 +82,9 @@
 							<div v-show="jumbotronShow" class="mb-2">
 								<b-row>
 									<b-col>
-										<!--
-											-----------
+										<!--===============
 												感谢的公司
-											-----------
-										 -->
+											=============== -->
 										<div class="card text-black">
 											<b-alert show variant="light" class="m-0 py-2 text-center">
 												<el-link :underline="false" target="_blank" type="primary" href="http://jym56.cn/">加运美有限公司</el-link>
@@ -103,11 +92,9 @@
 										</div>
 									</b-col>
 									<b-col>
-										<!--
-											-----------
+										<!--===============
 												开源组织
-											-----------
-										 -->
+											===============-->
 										<div class="card text-black ">
 											<b-alert show variant="light" class="m-0 py-2 text-center d-flex justify-content-around">
 												<el-link :underline="false" type="primary" href="https://cn.vuejs.org/">Vue</el-link>
